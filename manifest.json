@@ -16,6 +16,13 @@
     "service_worker": "background.js"
   },
   "chrome_url_overrides": {
-    "newtab": "prompt.html"
+    "newtab": "redirect.html"
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["timerOverlay.js"],
+    "run_at": "document_idle"
   }
+]
 }
