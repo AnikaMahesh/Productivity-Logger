@@ -10,7 +10,6 @@ function logUrlVisit(url) {
   });
 }
 
-// Listen to tab updates (traditional page loads)
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.url) {
     console.log("Visited URL (tabs):", changeInfo.url);
@@ -18,7 +17,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   }
 });
 
-// Safely listen to webNavigation if available (SPA route changes)
 if (chrome.webNavigation && chrome.webNavigation.onCompleted) {
   chrome.webNavigation.onCompleted.addListener(
     (details) => {
