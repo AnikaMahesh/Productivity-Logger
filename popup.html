@@ -2,8 +2,21 @@
 <html>
 <head>
   <title>Productivity Logger</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { width: 100%; padding: 8px; margin-top: 10px; }
+  </style>
 </head>
 <body>
-  <h1>Hows it going</h1>
+  <h2>Set Purpose</h2>
+  <input id="purposeInput" placeholder="e.g. Quantum Mechanics">
+  <button id="savePurposeBtn">Save Purpose</button>
+
+  <h2>Focus Session (minutes)</h2>
+  <input id="durationInput" type="number" min="1" placeholder="Duration in minutes">
+  <button id="startSessionBtn">Start Session</button>
+  <button id="endSessionBtn">End Session</button>
+
+  <script src="popup.js"></script>
 </body>
 </html>

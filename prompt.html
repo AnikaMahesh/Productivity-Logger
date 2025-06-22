@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Focus Session Start</title>
+  <title>Productivity Logger</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input { width: 100%; padding: 8px; margin-top: 8px; }
+    button { padding: 8px 12px; margin-top: 10px; }
+    p { margin-top: 10px; }
+  </style>
 </head>
 <body>
-  <h2>What is the purpose of this browser search?</h2>
-  <input type="text" id="userInput" />
-  <h2>How much time do you want this focus session to last?</h2>
-  <input type="number" id="inputTime" />
-  <button id="saveBtn">Save</button>
+  <h1>Set Your Purpose</h1>
+  <input id="purposeInput" placeholder="e.g., Research for project" />
+  <button id="savePurpose">Save Purpose</button>
   <p id="status"></p>
-  <script src="prompt.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
-

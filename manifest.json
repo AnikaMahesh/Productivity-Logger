@@ -1,28 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "Productivity Tracker",
+  "name": "Productivity Logger",
   "version": "1.0",
-  "description": "Tracks your browser use to help with productivity",
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
+  "description": "Focus session tracker with live relevancy score.",
   "permissions": [
+    "tabs",
     "storage",
-    "activeTab",
-    "scripting"
+    "notifications",
+    "scripting",
+    "activeTab"
   ],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
-  "chrome_url_overrides": {
-    "newtab": "redirect.html"
+  "action": {
+    "default_popup": "popup.html"
   },
   "content_scripts": [
-  {
-    "matches": ["<all_urls>"],
-    "js": ["timerOverlay.js"],
-    "run_at": "document_idle"
-  }
-]
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
