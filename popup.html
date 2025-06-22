@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Productivity Logger</title>
+  <title>Focus Session</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>Hows it going</h1>
+  <h1>Start Focus Session</h1>
+  <label>Purpose:</label>
+  <input type="text" id="purpose" placeholder="e.g., Machine Learning">
+  <label>Time (minutes):</label>
+  <input type="number" id="time" min="1" value="30">
+  <button id="start">Start Session</button>
+  <p id="status"></p>
+  <script src="popup.js"></script>
 </body>
 </html>

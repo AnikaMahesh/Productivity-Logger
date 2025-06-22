@@ -1,13 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Productivity Tracker",
-  "version": "1.0",
-  "description": "Tracks your browser use to help with productivity",
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
+  "name": "Productivity Logger",
+  "version": "2.0",
+  "description": "Stay productive by tracking relevancy of your browsing.",
   "permissions": [
+    "tabs",
     "storage",
     "activeTab",
     "scripting"
@@ -15,14 +12,18 @@
   "background": {
     "service_worker": "background.js"
   },
-  "chrome_url_overrides": {
-    "newtab": "redirect.html"
+  "action": {
+    "default_popup": "popup.html"
   },
   "content_scripts": [
-  {
-    "matches": ["<all_urls>"],
-    "js": ["timerOverlay.js"],
-    "run_at": "document_idle"
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   }
-]
 }
